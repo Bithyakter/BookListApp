@@ -3,29 +3,61 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BookList</title>
+    <title>@ViewData["Title"] - Book List App</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BookList.styles.css" asp-append-version="true" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-2YiyJ2GLw3EcIdI1A00lFmW/2YvgKU3FEMw8rSgZzL9QXmEh4uObH4HhOSY4pYsPjPmYn8c5j0rl0YBC3RfIUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Include Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" />
+
+    <style>
+        .navbar-custom {
+            background-color: #87CEFA; 
+            color: #090909; 
+            font-weight:600;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+             color: #080808;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #373333; 
+        }
+
+        .navbar-brand-logo {
+            font-family: 'Roboto', sans-serif; 
+            font-size: 1.75rem;
+            font-weight: 700; 
+            letter-spacing: 1px; 
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-custom navbar-toggleable-sm border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" href="/">BookListApp</a>
+                <a class="navbar-brand navbar-brand-logo" href="/Books">Book List App</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">                       
+                    <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/Books">Books</a>
+                            <a class="nav-link" href="/Books">Books</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
